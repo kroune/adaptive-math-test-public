@@ -1,0 +1,39 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.env
+scripts/run-migration.mjs
+
+# Local-only — contains credentials, never commit
+CLAUDE.md
+
+# Screenshots & temp files
+*.png
+*.jpg
+.playwright-mcp/
+src/assets/react.svg
+src/assets/vite.svg
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vercel
+results_*.csv
+supabase/.temp/

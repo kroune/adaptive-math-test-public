@@ -1,0 +1,21 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/supabase/:path*",
+      "destination": "https://lubmvwetwjtuphknzvnu.supabase.co/:path*"
+    },
+    {
+      "source": "/storage/:path*",
+      "destination": "https://lubmvwetwjtuphknzvnu.supabase.co/storage/:path*"
+    },
+    { "source": "/(.*)", "destination": "/" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}
