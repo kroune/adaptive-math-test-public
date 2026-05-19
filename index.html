@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FEF7EC" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131620" media="(prefers-color-scheme: dark)" />
+    <title>Адаптивное тестирование по математике</title>
+    <!-- Prevent white flash: set bg before anything paints -->
+    <style>
+      html { background-color: #FEF7EC; }
+      html.dark { background-color: #131620; }
+    </style>
+    <script>
+      (function() {
+        try {
+          var s = localStorage.getItem('theme');
+          var p = (s === 'light' || s === 'dark' || s === 'system') ? s : 'system';
+          var d = p === 'system'
+            ? window.matchMedia('(prefers-color-scheme: dark)').matches
+            : p === 'dark';
+          if (d) document.documentElement.classList.add('dark');
+        } catch(e) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

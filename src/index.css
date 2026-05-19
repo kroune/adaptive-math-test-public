@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ═══════════════════════════════════════════
+   Design tokens — "Sunny Classroom" theme
+   ═══════════════════════════════════════════ */
+@theme {
+  /* Fonts */
+  --font-display: "Fredoka", sans-serif;
+  --font-child: "Nunito", sans-serif;
+  --font-admin: "Plus Jakarta Sans", sans-serif;
+
+  /* Semantic surfaces */
+  --color-cream: #FEF7EC;
+  --color-midnight: #131620;
+  --color-surface-dark: #1C1F2E;
+  --color-charcoal: #2D2A27;
+  --color-warm-white: #F5F0EB;
+  --color-warm-border: #E8E0D8;
+  --color-dark-border: #333040;
+
+  /* Coral — primary actions */
+  --color-coral: #E8573A;
+  --color-coral-light: #FF8A6B;
+  --color-coral-hover: #D04228;
+  --color-coral-bg: #FFF5F2;
+  --color-coral-glow: #FFD0BF;
+
+  /* Seafoam — secondary accent */
+  --color-seafoam: #2ABFA4;
+  --color-seafoam-light: #6FE0C2;
+  --color-seafoam-hover: #1E9A82;
+  --color-seafoam-bg: #F0FDF9;
+  --color-seafoam-glow: #A8EEDA;
+
+  /* Sunshine — warm accent */
+  --color-sunshine: #FCBA28;
+  --color-sunshine-light: #FCDB73;
+  --color-sunshine-bg: #FFFBEB;
+  --color-sunshine-glow: #FFF3C4;
+
+  /* Grape — calm / motivation */
+  --color-grape: #8B7DDB;
+  --color-grape-light: #B4A8F0;
+  --color-grape-hover: #7B6BC8;
+  --color-grape-bg: #F5F3FF;
+  --color-grape-glow: #DDD6FE;
+
+  /* Mint — success / results */
+  --color-mint: #46B17B;
+  --color-mint-light: #86EFAC;
+  --color-mint-hover: #3A9868;
+  --color-mint-bg: #F0FDF4;
+  --color-mint-glow: #BBF7D0;
+
+  /* Rose — wrong / destructive */
+  --color-rose: #FB7185;
+  --color-rose-dark: #E11D48;
+
+  /* Animations */
+  --animate-bounce-in: bounce-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  --animate-slide-up: slide-up 0.4s ease-out both;
+  --animate-fade-in: fade-in 0.3s ease-out both;
+  --animate-pop: pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ═══════ Global ═══════ */
+:root {
+  --dot-color: rgba(0, 0, 0, 0.04);
+}
+.dark {
+  --dot-color: rgba(255, 255, 255, 0.025);
+}
+
+body {
+  margin: 0;
+}
+
+/* Match overscroll area to theme */
+html {
+  background-color: var(--color-cream);
+  transition: background-color 0.2s, color 0.2s;
+}
+html:where(.dark) {
+  background-color: var(--color-midnight);
+}
+
+/* ═══════ Blob colors (used as radial-gradient stops) ═══════ */
+:root {
+  --blob-coral: rgba(255, 208, 191, 0.5);
+  --blob-seafoam: rgba(168, 238, 218, 0.4);
+  --blob-sunshine: rgba(255, 243, 196, 0.45);
+  --blob-grape: rgba(221, 214, 254, 0.45);
+  --blob-mint: rgba(187, 247, 208, 0.45);
+}
+.dark {
+  --blob-coral: rgba(232, 87, 58, 0.14);
+  --blob-seafoam: rgba(42, 191, 164, 0.11);
+  --blob-sunshine: rgba(252, 186, 40, 0.11);
+  --blob-grape: rgba(139, 125, 219, 0.14);
+  --blob-mint: rgba(70, 177, 123, 0.14);
+}
+
+/* ═══════ Background pattern ═══════ */
+.bg-dots {
+  background-image: radial-gradient(
+    circle,
+    var(--dot-color) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+/* ═══════ Keyframes ═══════ */
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  60% {
+    transform: scale(1.02) translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.7;
+  }
+  60% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0;
+  }
+}

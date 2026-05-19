@@ -1,0 +1,21 @@
+export const CORAL: [number, number, number] = [232, 87, 58];
+export const CORAL_LIGHT: [number, number, number] = [255, 245, 242];
+export const MINT: [number, number, number] = [70, 177, 123];
+export const MINT_LIGHT: [number, number, number] = [240, 253, 244];
+export const ROSE: [number, number, number] = [251, 113, 133];
+export const ROSE_LIGHT: [number, number, number] = [255, 241, 242];
+export const SUNSHINE: [number, number, number] = [252, 186, 40];
+export const SUNSHINE_LIGHT: [number, number, number] = [255, 251, 235];
+export const CHARCOAL: [number, number, number] = [45, 42, 39];
+export const GRAY: [number, number, number] = [120, 120, 120];
+export const LIGHT_GRAY: [number, number, number] = [220, 220, 220];
+export const WHITE: [number, number, number] = [255, 255, 255];
+
+export const PAGE_WIDTH = 210;
+export const PAGE_HEIGHT = 297;
+export const ML = 15;
+export const MR = 15;
+export const MT = 15;
+export const MB = 15;
+export const CONTENT_W = PAGE_WIDTH - ML - MR;
+export const PAGE_BOTTOM_Y = PAGE_HEIGHT - MB;
